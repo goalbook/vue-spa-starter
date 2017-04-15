@@ -10,12 +10,25 @@ npm install
 
 # serve with hot reload at localhost:8080
 npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## What's Included?
+- Default route to demonstrate the most basic router usage (single page, no parameters)
+- Sample dynamic route to demonstrate capturing URL parameters and passing them to a component as props
+- Sample folder with demo components to get familiar with using/developing/composing Vue components
+- Starter API code with example request to fist-to-five data api
+
+Take some time to peruse/experiment with the sample code and read the comments.
+
+## Optional dependencies
+- Bootstrap CSS v3 (to remove, comment out the import line in main.js)
+
+Feel free to use any additional dependencies in this project (e.g. a different CSS framework, lodash, jquery, etc). You can add them by doing `npm install <library> --save` or including a link/script tag in index.html if using a CDN.
+
+## Helpful Links
+Many of the comments in the sample code link to relevant pages of the docs.
+
+- [Vue docs](https://vuejs.org/v2/guide/)
+- [Vue Router docs](http://router.vuejs.org/en/)
+
+For detailed explanation on how the webpack project works, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
