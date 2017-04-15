@@ -4,8 +4,8 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
-// Uncomment below if you do not want to use bootstrap css
-import 'bootstrap/dist/css/bootstrap.css'
+// Uncomment below if you want to use bootstrap css
+// import 'bootstrap/dist/css/bootstrap.css'
 
 Vue.config.productionTip = false
 

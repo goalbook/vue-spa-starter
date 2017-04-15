@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="sample-api-dump">
     <p>Component that illustrates usage of an ajax call:</p>
     <label>AJAX Response</label>
     <pre>{{responseData}}
@@ -31,3 +31,10 @@
     }
   }
 </script>
+
+<style scoped>
+  .sample-api-dump {
+    padding: 12px;
+    background: #f3f3f3;
+  }
+</style>
