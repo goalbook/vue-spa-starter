@@ -4,16 +4,36 @@
 
     <sample-api-dump class="float-right"></sample-api-dump>
 
-    <p>Here's the msg as defined in the component's data: {{msg}}. <br>And here's my other data: {{dataObj.nestedField}}</p>
+    <p>Here's the msg as defined in the component's data: {{msg}}.
+      <br>
+      Here's someObj: {{someObj}}
+      <br>
+      Here's someArr: {{someArr}}
+    </p>
 
     <h3>Computed Properties</h3>
     <p>Reversed msg: {{reversedMsg}}</p>
+    <p>Joined someArr: {{joinedArr}}</p>
 
     <h3>Component Methods</h3>
     <p><button v-on:click="handleClick()">Click me to trigger a component method</button></p>
 
     <h3>Binding Data to Form Inputs</h3>
-    <input type="text" v-model="msg"> <b>Input value: </b> {{msg}}
+    <input type="text" v-model="msg"> <b>msg: </b> {{msg}}
+
+    <br>
+    <br>
+
+    <input type="text" v-model="newArrData" placeholder="Add data to someArr"> <button v-on:click="addToArray()">Add</button>
+    <ul>
+      <li v-for="(elem, index) in someArr" v-bind:key="index">{{index}}: {{elem}}</li>
+    </ul>
+
+    <label>
+      <input type="checkbox" v-model="switchVal"> <b>switchVal:</b>
+      <span v-if="switchVal">On!</span>
+      <span v-if="!switchVal">Off</span>
+    </label>
 
     <h3>Composing Components</h3>
     <p>Below we are using a child component and passing msg as a property.</p>
@@ -51,7 +71,9 @@ export default {
   data () {
     return {
       msg: 'Hello, World',
-      dataObj: {
+      switchVal: false,
+      someArr: ['add', 'some', 'data'],
+      someObj: {
         // when declaring the component's data, it is best to declare and set defaults for every field in objects in order for them to become reactive
         // see here: https://vuejs.org/v2/guide/instance.html#Properties-and-Methods
         nestedField: 'nested field'
@@ -64,6 +86,9 @@ export default {
   computed: {
     reversedMsg () {
       return this.msg.split('').reverse().join('')
+    },
+    joinedArr () {
+      return this.someArr.join(' ')
     }
   },
 
@@ -72,6 +97,12 @@ export default {
   methods: {
     handleClick () {
       alert('Triggered from a component method')
+    },
+    addToArray () {
+      if (this.newArrData) {
+        this.someArr.push(this.newArrData)
+        this.newArrData = ''
+      }
     },
     // see http://router.vuejs.org/en/api/component-injections.html
     navigateProgrammatically () {
