@@ -18,11 +18,15 @@ npm run dev
 - Sample folder with demo components to get familiar with using/developing/composing Vue components.
 - Starter/sample API code with example request to fist-to-five data api
 
-Take some time to peruse/experiment with the sample code and read the comments. In particular the `sample/Hello.vue` component is kind of like the "kitchen-sink" component, so start there.
+Take some time to peruse/experiment with the sample code and read the comments. Places to start:
+- `main.js` is the entry point that bootstraps the entire App
+- `App.vue` is the top level component. In its template there is a `<router-view>` where content is rendered based on the current route
+- `router/index.js` defines the app's routes and corresponding components (e.g. `/` maps to the `Hello` component)
+- `sample/Hello.vue` component is a "kitchen-sink" component that demonstrates the basics of Vue
 
 ## Optional dependencies
 - Bootstrap CSS v3 (to use, uncomment the relevantimport line in main.js)
-- The sample API code uses axios for making http requests but you're not required to use it
+- The sample API code uses [axios](https://github.com/mzabriskie/axios), a promise-based http client, for making http requests but you're not required to use it
 
 Feel free to use any additional dependencies in this project (e.g. a different CSS framework, lodash, jquery, etc). You can add them by doing `npm install <library> --save` or including a link/script tag in index.html if using a CDN.
 
@@ -36,3 +40,10 @@ Many of the comments in the sample code link to relevant pages of the docs.
 
 - [Vue docs](https://vuejs.org/v2/guide/)
 - [Vue Router docs](http://router.vuejs.org/en/)
+
+Syntax highlighting for `.vue` files:
+- For (Sublime Text)[https://github.com/vuejs/vue-syntax-highlight]
+- For (Atom)[https://atom.io/packages/language-vue-component]
+- For (Vim)[https://github.com/posva/vim-vue]
+
+Browser debugging: (vue-devtools Chrome extension)[https://github.com/vuejs/vue-devtools]

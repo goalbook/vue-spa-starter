@@ -1,6 +1,6 @@
 <template>
   <div class="child-component">
-    <h4>Sample Component with Props</h4>
+    <div class="component-label">ChildComponentWithProps</div>
     <p><b>someProp: </b>{{someProp}}</p>
   </div>
 </template>
@@ -24,5 +24,6 @@
   .child-component {
     padding: 12px;
     background: lightyellow;
+    border: 3px solid yellow;
   }
 </style>

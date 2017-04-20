@@ -1,6 +1,8 @@
 <template>
   <div>
-    <p>Looks like I've received a a prop from the URL: <b>{{dynamicParam}}</b></p>
+
+    <p>Looks like I've received a prop from the URL: <b>{{dynamicParam}}</b></p>
+    <p>Try changing it to something else, like "question-id"</p>
   </div>
 </template>
 

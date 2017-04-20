@@ -1,5 +1,6 @@
 <template>
   <div class="sample-api-dump">
+    <div class="component-label">SampleApiDump</div>
     <p>Component that illustrates usage of an ajax call:</p>
     <label>AJAX Response</label>
     <pre>{{responseData}}
@@ -36,5 +37,12 @@
   .sample-api-dump {
     padding: 12px;
     background: #f3f3f3;
+    border: 3px solid red;
+    width: 300px;
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  pre {
+    white-space: pre-wrap;
   }
 </style>

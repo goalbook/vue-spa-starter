@@ -1,8 +1,19 @@
 <template>
-  <div>
+  <!--
+  // Hello.vue - a kitchen sink component
+  // Summary of what's demonstrated:
+  // - Mustache style templating, e.g. {{msg}}
+  // - v-bind, v-on to bind data and methods in the template
+  // - v-if, v-for to render content conditionally and for multiple items
+  // - v-model for binding data to form inputs
+  // - Composing custom components, e.g. <child-component-with-props> and <sample-api-dump>
+  // - Computed properties
+  // - Component methods
+  // - Scoped CSS styles
+  -->
+  <div class="hello">
+    <div class="component-label">Hello</div>
     <h2>Hello Component</h2>
-
-    <sample-api-dump class="float-right"></sample-api-dump>
 
     <p>Here's the msg as defined in the component's data: {{msg}}.
       <br>
@@ -36,16 +47,19 @@
     </label>
 
     <h3>Composing Components</h3>
+
     <p>Below we are using a child component and passing msg as a property.</p>
     <child-component-with-props v-bind:someProp="msg"></child-component-with-props>
     <br>
     <p>We can also pass in literal strings as properties like so:</p>
     <child-component-with-props someProp="some literal text"></child-component-with-props>
+    <br>
+    <sample-api-dump></sample-api-dump>
 
-    <h3>Navigation</h3>
+    <h3>Routing/Navigation</h3>
     <ul>
       <li>Navigate using router-link elements <router-link :to="{name: 'SampleDynamicRoute', params: {dynamicParam: msg}}">like this</router-link></li>
-      <li>Navigate programmatically <a v-on:click="navigateProgrammatically()">like this</a></li>
+      <li>Navigate programmatically with a component method <button v-on:click="navigateProgrammatically()">like this</button></li>
     </ul>
   </div>
 </template>
@@ -68,11 +82,13 @@ export default {
 
   // whatever is returned by data() can be referenced directly in the template
   // or programmatically in methods using "this"
+  // declare any fields for this component here to make them reactive, including nested fields
   data () {
     return {
       msg: 'Hello, World',
       switchVal: false,
       someArr: ['add', 'some', 'data'],
+      newArrData: '',
       someObj: {
         // when declaring the component's data, it is best to declare and set defaults for every field in objects in order for them to become reactive
         // see here: https://vuejs.org/v2/guide/instance.html#Properties-and-Methods
@@ -117,10 +133,9 @@ export default {
 }
 </script>
 
+// scoped means that these styles will be scoped to this component - it shouldn't affect anything outside of it
 <style scoped>
-  .float-right {
-    float: right;
-    width: 300px;
-    margin-right: 20px;
+  .hello {
+    border: 4px solid black;
   }
 </style>
