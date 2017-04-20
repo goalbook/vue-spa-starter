@@ -25,13 +25,13 @@ Take some time to peruse/experiment with the sample code and read the comments. 
 - `sample/Hello.vue` component is a "kitchen-sink" component that demonstrates the basics of Vue
 
 ## Optional dependencies
-- Bootstrap CSS v3 (to use, uncomment the relevantimport line in main.js)
+- Bootstrap CSS v3 (to use, uncomment the relevant import line in main.js)
 - The sample API code uses [axios](https://github.com/mzabriskie/axios), a promise-based http client, for making http requests but you're not required to use it
 
-Feel free to use any additional dependencies in this project (e.g. a different CSS framework, lodash, jquery, etc). You can add them by doing `npm install <library> --save` or including a link/script tag in index.html if using a CDN.
+Feel free to use any additional dependencies in this project (e.g. a different CSS framework, lodash, jquery, etc). You can add them by doing `npm install <library> --save` and importing them where needed, or including a link/script tag in index.html if using a CDN.
 
 ## .vue files??
-`.vue` files allow us to define components in a single file (template, javascript, and styles). This makes it easy and quick to make component-level changes of any kind. The project is pre-configured to load and bundle `.vue` files so you can write regular javascript and ES6 with imports and exports within the script tag, and css rules within the style tag.
+`.vue` files allow us to define components in a single file (template in `<template>`, javascript in `<script>`, and styles in `<style>`). This makes it easy and quick to make component-level changes of any kind. The project is pre-configured to load and bundle `.vue` files so you can write regular javascript and ES6 with imports and exports within the script tag, and css rules within the style tag.
 
 Check out the sample components in `sample/` to see how this works.
 
@@ -42,8 +42,8 @@ Many of the comments in the sample code link to relevant pages of the docs.
 - [Vue Router docs](http://router.vuejs.org/en/)
 
 Syntax highlighting for `.vue` files:
-- For (Sublime Text)[https://github.com/vuejs/vue-syntax-highlight]
-- For (Atom)[https://atom.io/packages/language-vue-component]
-- For (Vim)[https://github.com/posva/vim-vue]
+- For [Sublime Text](https://github.com/vuejs/vue-syntax-highlight)
+- For [Atom](https://atom.io/packages/language-vue-component)
+- For [Vim](https://github.com/posva/vim-vue)
 
-Browser debugging: (vue-devtools Chrome extension)[https://github.com/vuejs/vue-devtools]
+Browser debugging: [vue-devtools Chrome extension](https://github.com/vuejs/vue-devtools)
