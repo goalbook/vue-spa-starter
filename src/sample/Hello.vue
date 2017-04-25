@@ -27,10 +27,12 @@
     <p>Joined someArr: {{joinedArr}}</p>
 
     <h3>Component Methods</h3>
+    <!-- See https://vuejs.org/v2/guide/events.html -->
     <p><button v-on:click="handleClick">Click me to trigger a component method</button></p>
     <p><button v-on:click="handleClickWithArg('some argument string')">Click me to trigger a component method with an argument</button></p>
 
     <h3>Binding Data to Form Inputs</h3>
+    <!-- See https://vuejs.org/v2/guide/forms.html -->
     <input type="text" v-model="msg"> <b>msg: </b> {{msg}}
 
     <br>

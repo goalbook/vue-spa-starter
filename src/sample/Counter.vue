@@ -16,6 +16,8 @@
     methods: {
       increment() {
         this.count += 1
+
+        // See https://vuejs.org/v2/guide/components.html#Custom-Events
         this.$emit('countUpdated', this.count)
       }
     }
