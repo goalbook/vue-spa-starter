@@ -28,7 +28,9 @@ Take some time to peruse/experiment with the sample code and read the comments. 
 - Bootstrap CSS v3 (to use, uncomment the relevant import line in main.js)
 - The sample API code uses [axios](https://github.com/mzabriskie/axios), a promise-based http client, for making http requests but you're not required to use it
 
-Feel free to use any additional dependencies in this project (e.g. a different CSS framework, lodash, jquery, etc). You can add them by doing `npm install <library> --save` and importing them where needed, or including a link/script tag in index.html if using a CDN.
+Feel free to use any additional dependencies in this project (e.g. a different CSS framework, lodash, jquery, etc). You can add them by doing `npm install <library> --save` and importing them where needed, or including a link/script tag in index.html if using a CDN. For example, you may find the below helpful (but completely optional):
+- [uuid](https://www.npmjs.com/package/uuid) for generating unique IDs
+- [Vuex](https://www.npmjs.com/package/vuex) for state management in Vue applications
 
 ## .vue files??
 `.vue` files allow us to define components in a single file (template in `<template>`, javascript in `<script>`, and styles in `<style>`). This makes it easy and quick to make component-level changes of any kind. The project is pre-configured to load and bundle `.vue` files so you can write regular javascript and ES6 with imports and exports within the script tag, and css rules within the style tag.

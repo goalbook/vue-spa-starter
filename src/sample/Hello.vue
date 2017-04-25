@@ -27,7 +27,8 @@
     <p>Joined someArr: {{joinedArr}}</p>
 
     <h3>Component Methods</h3>
-    <p><button v-on:click="handleClick()">Click me to trigger a component method</button></p>
+    <p><button v-on:click="handleClick">Click me to trigger a component method</button></p>
+    <p><button v-on:click="handleClickWithArg('some argument string')">Click me to trigger a component method with an argument</button></p>
 
     <h3>Binding Data to Form Inputs</h3>
     <input type="text" v-model="msg"> <b>msg: </b> {{msg}}
@@ -35,7 +36,7 @@
     <br>
     <br>
 
-    <input type="text" v-model="newArrData" placeholder="Add data to someArr"> <button v-on:click="addToArray()">Add</button>
+    <input type="text" v-model="newArrData" placeholder="Add data to someArr"> <button v-on:click="addToArray">Add</button>
     <ul>
       <li v-for="(elem, index) in someArr" v-bind:key="index">{{index}}: {{elem}}</li>
     </ul>
@@ -54,6 +55,9 @@
     <p>We can also pass in literal strings as properties like so:</p>
     <child-component-with-props someProp="some literal text"></child-component-with-props>
     <br>
+    <p>Parent components can listen for events emitted by a child component (check console):</p>
+    <counter v-on:countUpdated="notifyLatestCount"></counter>
+    <br>
     <sample-api-dump></sample-api-dump>
 
     <h3>Routing/Navigation</h3>
@@ -66,6 +70,7 @@
 
 <script>
 import ChildComponentWithProps from './ChildComponentWithProps'
+import Counter from './Counter'
 import SampleApiDump from './SampleApiDump'
 
 export default {
@@ -77,7 +82,8 @@ export default {
   // See here: https://vuejs.org/v2/guide/components.html#Registration
   components: {
     'child-component-with-props': ChildComponentWithProps,
-    'sample-api-dump': SampleApiDump
+    'sample-api-dump': SampleApiDump,
+    'counter': Counter
   },
 
   // whatever is returned by data() can be referenced directly in the template
@@ -114,11 +120,17 @@ export default {
     handleClick () {
       alert('Triggered from a component method')
     },
+    handleClickWithArg (argString) {
+      alert(argString)
+    },
     addToArray () {
       if (this.newArrData) {
         this.someArr.push(this.newArrData)
         this.newArrData = ''
       }
+    },
+    notifyLatestCount (count) {
+      console.log(`Counter was incremented to ${count}`)
     },
     // see http://router.vuejs.org/en/api/component-injections.html
     navigateProgrammatically () {
